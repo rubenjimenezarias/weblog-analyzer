@@ -83,4 +83,22 @@ public class LogAnalyzer
         }
         return accesses;
     }
+    
+    /**
+     * Devuelve la hora de mayor solicitudes
+     */
+    public int busiestHour()
+    {
+        int accesses = 0 ;
+        int maxaccesses = 0;
+        int maxHour = 0;
+        for (int cont = 0;cont < hourCounts.length; cont++)
+        {
+            if (hourCounts[cont] > maxaccesses){
+                maxaccesses = hourCounts[cont];
+                maxHour = cont;
+            }
+        }
+        return maxHour;
+    }
 }
