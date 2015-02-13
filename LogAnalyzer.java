@@ -128,4 +128,23 @@ public class LogAnalyzer
         }
         return maxaccesses;
     }
+    
+    /**
+     * Analyze the hourly accesses in the given date
+     * 
+     * @param day the given day
+     * @param month the given month
+     * @param year the given year
+     */
+    public void analyzeThisDate(int day, int month, int year)
+    {
+        while(reader.hasNext()) {
+            LogEntry entry = reader.next();
+            if (day == entry.getDay() && month == entry.getMonth() && year == entry.getYear())
+            {
+                int hour = entry.getHour();
+                hourCounts[hour]++;
+            }
+        }
+    }
 }
