@@ -71,4 +71,16 @@ public class LogAnalyzer
         reader.printData();
     }
     
+     /**
+     * Devuelve numero total de accesses del servidor
+     */
+    public int numberOfAccesses()
+    {
+        int accesses = 0 ;
+        for (int cont = 0;cont < hourCounts.length; cont++)
+        {
+            accesses += hourCounts[cont];
+        }
+        return accesses;
+    }
 }
