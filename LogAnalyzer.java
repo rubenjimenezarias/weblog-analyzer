@@ -89,16 +89,28 @@ public class LogAnalyzer
      */
     public int busiestHour()
     {
-        int accesses = 0 ;
         int maxaccesses = 0;
-        int maxHour = 0;
         for (int cont = 0;cont < hourCounts.length; cont++)
         {
-            if (hourCounts[cont] > maxaccesses){
-                maxaccesses = hourCounts[cont];
-                maxHour = cont;
+            if (hourCounts[cont] > hourCounts[maxaccesses]){
+                maxaccesses = cont;
             }
         }
-        return maxHour;
+        return maxaccesses;
+    }
+    
+    /**
+     * Devuelve la hora de menor solicitudes
+     */
+    public int quietestHour()
+    {
+       int minaccesses = 0;
+       for (int cont = 0;cont < hourCounts.length; cont++)
+       {
+           if (hourCounts[cont] < hourCounts[minaccesses]){
+               minaccesses = cont;
+           }
+       }
+       return minaccesses;
     }
 }
