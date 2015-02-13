@@ -113,4 +113,19 @@ public class LogAnalyzer
        }
        return minaccesses;
     }
+    
+    /**
+     * Devuelve las horas consecutivas con mayor solicitudes
+     */
+    public int busiest2Hour()
+    {
+        int maxaccesses = 0;
+        for (int cont = 0;cont < (hourCounts.length-1); cont++)
+        {
+            if ((hourCounts[cont]+hourCounts[cont+1]) > (hourCounts[maxaccesses]+hourCounts[maxaccesses+1])){
+                maxaccesses = cont;
+            }
+        }
+        return maxaccesses;
+    }
 }
